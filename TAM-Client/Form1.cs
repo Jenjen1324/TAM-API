@@ -17,7 +17,7 @@ namespace TAM_Client
     {
         public Form1()
         {
-            //InitializeComponent();
+            InitializeComponent();
             WebTest();
         }
 

@@ -8,4 +8,4 @@ Information:
 C# String formatted
 class\\=\\\"head-day\\\"\\>(\\w+)
 
-.+onMouseOver\\=\\\"tooltip\\(\\'([a-zA-Z0-9\\&\\;\\s]+)\\'\\)\\;\\\"\\s*onMouseOut\\=\\\"kill\\(\\)\\;\\\"\\>\\<strong\\>([a-zA-Z0-9\\&\\#\\;]+)\\<\\/strong\\>([a-zA-Z0-9\\\"\\&\\;]+)(\\<\\/span\\>\\<span\\s*id\\=\\\"[a-z0-9]*\\\"\\s*class\\=\\\"spanright\\s*tt\\-entry\\\"\\>([0-9]+))?
+.+onMouseOver\\=\\\"tooltip\\(\\'([a-zA-Z0-9\\&\\;\\s]+)\\'\\)\\;\\\"\\s*onMouseOut\\=\\\"kill\\(\\)\\;\\\"\\>\\<strong\\>([a-zA-Z0-9\\&\\#\\;]+)\\<\\/strong\\>([a-zA-Z0-9\\\"\\&\\;]+)(\\a<\\/span\\>\\<span\\s*id\\=\\\"[a-z0-9]*\\\"\\s*class\\=\\\"spanright\\s*tt\\-entry\\\"\\>([0-9]+))?

@@ -53,7 +53,7 @@ namespace TAM_Client.Connection
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/main.php?action=tt_oneclassNew&table=&list=0");
 
-            string postdata = String.Format("sc={0}&wk=34", _class);
+            string postdata = String.Format("sc={0}&wk=43", _class);
             byte[] data = new ASCIIEncoding().GetBytes(postdata);
 
             request.CookieContainer = this.cookies;
@@ -72,6 +72,8 @@ namespace TAM_Client.Connection
             {
                 formPage = response.ReadToEnd();
             }
+
+            Console.WriteLine(formPage);
 
             return TimeTable.Parse(formPage);
         }
