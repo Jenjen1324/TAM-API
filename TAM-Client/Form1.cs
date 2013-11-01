@@ -33,8 +33,11 @@ namespace TAM_Client
 
             request.Login();
 
+            request.Test();
+
+            /*
             TimeTable table = request.GetTimeTable();
-            MessageBox.Show(table.name);
+            MessageBox.Show(table.name);*/
         }
 
         public void SetSource(string src)

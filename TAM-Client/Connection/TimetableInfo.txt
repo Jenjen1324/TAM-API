@@ -5,7 +5,11 @@ class\=\"head-day\"\>(\w+)
 Information: 
 .+onMouseOver\=\"tooltip\(\'([a-zA-Z0-9\&\;\s]+)\'\)\;\"\s*onMouseOut\=\"kill\(\)\;\"\>\<strong\>([a-zA-Z0-9\&\#\;]+)\<\/strong\>([a-zA-Z0-9\"\&\;]+)(\<\/span\>\<span\s*id\=\"[a-z0-9]*\"\s*class\=\"spanright\s*tt\-entry\"\>([0-9]+))?
 
+.+class\=\"empty\"\s*\>([a-zA-Z&;]*)|.*class\=\"([\w\s]*)\".+onmouseover\=\"tooltip\(\'([a-zA-Z0-9\&\;\s]+)\'\)\;\"\s*onmouseout\=\"kill\(\)\;\"\>\<strong\>([a-zA-Z0-9\&\#\;]+)\<\/strong\>([a-zA-Z0-9\"\&\;]+)(\<\/span\>\<span\s*id\=\"[a-z0-9]*\"\s*class\=\"spanright\s*tt\-entry\"\>([0-9]+))?
+
 C# String formatted
 class\\=\\\"head-day\\\"\\>(\\w+)
 
 .+onMouseOver\\=\\\"tooltip\\(\\'([a-zA-Z0-9\\&\\;\\s]+)\\'\\)\\;\\\"\\s*onMouseOut\\=\\\"kill\\(\\)\\;\\\"\\>\\<strong\\>([a-zA-Z0-9\\&\\#\\;]+)\\<\\/strong\\>([a-zA-Z0-9\\\"\\&\\;]+)(\\a<\\/span\\>\\<span\\s*id\\=\\\"[a-z0-9]*\\\"\\s*class\\=\\\"spanright\\s*tt\\-entry\\\"\\>([0-9]+))?
+
+.+class\\=\\\"empty\\\"\\s*\\>([a-zA-Z&;]*)|.*class\\=\\\"([\\w\\s]*)\\\".+onmouseover\\=\\\"tooltip\\(\\'([a-zA-Z0-9\\&\\;\\s]+)\\'\\)\\;\\\"\\s*onmouseout\\=\\\"kill\\(\\)\\;\\\"\\>\\<strong\\>([a-zA-Z0-9\\&\\#\\;]+)\\<\\/strong\\>([a-zA-Z0-9\\\"\\&\\;]+)(\\<\\/span\\>\\<span\\s*id\\=\\\"[a-z0-9]*\\\"\\s*class\\=\\\"spanright\\s*tt\\-entry\\\"\\>([0-9]+))?

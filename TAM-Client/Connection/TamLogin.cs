@@ -31,6 +31,7 @@ namespace TAM_Client.Connection
 
         public void Login()
         {
+            Console.WriteLine("Logging in...");
             this.cookies = new CookieContainer();
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://info.tam.ch/");
 
@@ -49,8 +50,37 @@ namespace TAM_Client.Connection
             HttpWebResponse form = (HttpWebResponse)request.GetResponse();
         }
 
+        public void Test()
+        {
+            Console.WriteLine("Testing");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/ajax/register");
+
+            string postdata = String.Format("classbookId={0}&week={1}", "FSJA8mpf-hcLOoVQVnTLhHnOFVvTiq9_hh0W3PUl4thjPF41HBZbZhXlxbCE5zUHclJqornD0H_xZAFrDFAMIg..", "201339");
+            byte[] data = new ASCIIEncoding().GetBytes(postdata);
+
+            request.CookieContainer = this.cookies;
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+
+            using (Stream stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            HttpWebResponse form = (HttpWebResponse)request.GetResponse();
+
+            string formPage;
+            using (StreamReader response = new StreamReader(form.GetResponseStream(), Encoding.UTF8))
+            {
+                formPage = response.ReadToEnd();
+            }
+
+            Console.WriteLine(formPage);
+        }
+
         public TimeTable GetTimeTable()
         {
+            Console.WriteLine("Requesting Timetable...");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/main.php?action=tt_oneclassNew&table=&list=0");
 
             string postdata = String.Format("sc={0}&wk=43", _class);
@@ -72,8 +102,6 @@ namespace TAM_Client.Connection
             {
                 formPage = response.ReadToEnd();
             }
-
-            Console.WriteLine(formPage);
 
             return TimeTable.Parse(formPage);
         }
