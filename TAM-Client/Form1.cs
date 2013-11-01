@@ -23,10 +23,12 @@ namespace TAM_Client
 
         void WebTest()
         {
+            string pwd = Console.ReadLine();
+
             TamLogin request = new TamLogin()
             {
                 username = "jens.vogler",
-                password = "y_98diH[am",
+                password = pwd,
                 school = "kho",
                 _class = "32"
             };
