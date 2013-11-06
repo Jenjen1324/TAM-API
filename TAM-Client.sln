@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAM-API", "TAM-Client\TAM-API.csproj", "{368166C6-B6A3-4D5B-A762-482B77C6EF8D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAM-Client", "TAM-Client\TAM-Client.csproj", "{76505DD2-45F2-48A7-94F8-3932AC923E9B}"
 EndProject
 Global
@@ -11,17 +9,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{368166C6-B6A3-4D5B-A762-482B77C6EF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{368166C6-B6A3-4D5B-A762-482B77C6EF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{368166C6-B6A3-4D5B-A762-482B77C6EF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{368166C6-B6A3-4D5B-A762-482B77C6EF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76505DD2-45F2-48A7-94F8-3932AC923E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76505DD2-45F2-48A7-94F8-3932AC923E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76505DD2-45F2-48A7-94F8-3932AC923E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76505DD2-45F2-48A7-94F8-3932AC923E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TAM-Client\TAM-API.csproj
+		StartupItem = TAM-Client\TAM-Client.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

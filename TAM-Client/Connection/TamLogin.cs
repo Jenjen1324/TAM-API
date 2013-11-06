@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TAM_Client.Connection
 {
@@ -83,7 +82,7 @@ namespace TAM_Client.Connection
             Console.WriteLine("Requesting Timetable...");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/main.php?action=tt_oneclassNew&table=&list=0");
 
-            string postdata = String.Format("sc={0}&wk=43", _class);
+            string postdata = String.Format("sc={0}", _class);
             byte[] data = new ASCIIEncoding().GetBytes(postdata);
 
             request.CookieContainer = this.cookies;
@@ -103,7 +102,9 @@ namespace TAM_Client.Connection
                 formPage = response.ReadToEnd();
             }
 
-            return TimeTable.Parse(formPage);
+			return new TimeTable () {
+				html = formPage
+			};
         }
     }
 }

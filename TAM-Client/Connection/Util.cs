@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace TAM_Client.Connection
 {
@@ -18,5 +19,15 @@ namespace TAM_Client.Connection
                 .Replace("&ouml;", "ö");
 
         }
+
+		public static int GetCurrentWeekNumber()
+		{
+			var currentCulture = CultureInfo.CurrentCulture;
+			var weekNo = currentCulture.Calendar.GetWeekOfYear(
+				DateTime.Now,
+				currentCulture.DateTimeFormat.CalendarWeekRule,
+				currentCulture.DateTimeFormat.FirstDayOfWeek);
+			return weekNo;
+		}
     }
 }
