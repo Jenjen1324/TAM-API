@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TAM_Client.Connection
+namespace TAMClient.Connection
 {
     public class TamLogin
     {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Net;
 
-namespace TAM_Client.Connection
+namespace TAMClient.Connection
 {
     public class TimeTable
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace TAM_Client.Connection
+namespace TAMClient.Connection
 {
     public static class Util
     {

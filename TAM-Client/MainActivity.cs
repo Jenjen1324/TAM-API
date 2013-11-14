@@ -6,11 +6,12 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Webkit;
-using TAM_Client.Connection;
+using TAMClient.Connection;
 using Android.Net;
 using System.Net;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace TAMClient
 {
@@ -55,9 +56,8 @@ namespace TAMClient
 				school = "kho",
 				_class = "32"
 			};
-
+			LoadCache ();
 			Login ();
-
 		}
 
 		private void button_click(Object sender, EventArgs e)
@@ -82,14 +82,30 @@ namespace TAMClient
 		private void LoadPage()
 		{
 			progB.Visibility = ViewStates.Visible;
+			text.Text = "Loading data...";
 			Task.Factory.StartNew (delegate {
 				TimeTable tt = session.GetTimeTable ();
+				string html = tt.GetHtmlTimeTable();
+				Util.IO.SaveData(this,"timetable",html);
 				RunOnUiThread (delegate {
-					web_view.LoadData (tt.GetHtmlTimeTable(), "text/html", null);
+					web_view.LoadData (html, "text/html", null);
 					text.Text = "";
 					progB.Visibility = ViewStates.Invisible;
 				});
 			});
+		}
+
+		private void LoadCache()
+		{
+			try
+			{
+				string html = Util.IO.LoadData<string>(this, "timetable");
+				web_view.LoadData (html, "text/html", null);
+			}
+			catch
+			{
+				Console.WriteLine ("No cached data availible");
+			}
 		}
 	}
 }
