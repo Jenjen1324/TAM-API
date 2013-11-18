@@ -5,8 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using TAMClient.Util;
 
-namespace TAMClient.Connection
+namespace TAMClient.TAM_API
 {
     public class TamLogin
     {
@@ -30,6 +31,11 @@ namespace TAMClient.Connection
 
         public void Login()
         {
+			/*if (username == null || password == null || school == null) {
+				if (!LoadCred ())
+					throw new Exception("No Login data provided");
+			}*/
+
             Console.WriteLine("Logging in...");
             this.cookies = new CookieContainer();
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://info.tam.ch/");
@@ -77,17 +83,39 @@ namespace TAMClient.Connection
             Console.WriteLine(formPage);
         }
 
-        public TimeTable GetTimeTable()
+		private bool LoadCred()
+		{
+			try
+			{
+				string[] data = IO.LoadDataArray("cred.txt");
+				this.username = data[0];
+				this.password_enc = data[1];
+				this.school = data[2];
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+        public TimeTable GetTimeTable(int weekNumber)
         {
+			/*if (_class == null) {
+				if (!LoadClass())
+					throw new Exception ("No class provided");
+			}*/
+
             Console.WriteLine("Requesting Timetable...");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/main.php?action=tt_oneclassNew&table=&list=0");
 
-            string postdata = String.Format("sc={0}", _class);
+			string postdata = String.Format("sc={0}&wk={1}", _class, weekNumber.ToString());
+			Console.WriteLine (postdata);
             byte[] data = new ASCIIEncoding().GetBytes(postdata);
 
             request.CookieContainer = this.cookies;
             request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
+			request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = data.Length;
 
             using (Stream stream = request.GetRequestStream())
@@ -106,5 +134,16 @@ namespace TAMClient.Connection
 				html = formPage
 			};
         }
+
+		private bool LoadClass ()
+		{
+			try {
+				this._class = IO.LoadData("class.txt");
+				return true;
+			}
+			catch {
+				return false;
+			}
+		}
     }
 }

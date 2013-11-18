@@ -18,10 +18,9 @@ namespace TAMClient
 	[Activity (Label = "TAM-Client", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
-		TamLogin session;
-
 		WebView web_view;
 		ProgressBar progB;
+		TamLogin session;
 		TextView textBox;
 		int currentWeek;
 
@@ -39,36 +38,19 @@ namespace TAMClient
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			//try
-			//{
-				string pwd = "y_98diH[am";
-				session = new TamLogin()
-				{
-					username = "jens.vogler",
-					password = pwd,
-					school = "kho",
-					_class = "32"
-				};
-				//session = new TamLogin();
-				SetContentView (Resource.Layout.Main);
-			//}
-			/*catch {
-				SetContentView (Resource.Layout.Login);
-				new LoginHandler ();
-				return;
-			}*/
+
+			SetContentView (Resource.Layout.Login);
+			return;
+			web_view = FindViewById<WebView> (Resource.Id.webView1);
+			web_view.Settings.JavaScriptEnabled = true;
+			web_view.SetWebViewClient (new CustomWebViewClient());
+
+			progB = FindViewById<ProgressBar> (Resource.Id.progressBar1);
+			currentWeek = TAM_API.Util.GetCurrentWeekNumber ();
+			textBox = FindViewById<TextView> (Resource.Id.textView1);
 
 			Button btn_next = FindViewById<Button> (Resource.Id.button_next);
 			Button btn_prev = FindViewById<Button> (Resource.Id.button_prev);
-			web_view = FindViewById<WebView> (Resource.Id.webView1);
-			progB = FindViewById<ProgressBar> (Resource.Id.progressBar1);
-			textBox = FindViewById<TextView> (Resource.Id.textView1);
-
-			web_view.Settings.JavaScriptEnabled = true;
-			web_view.SetWebViewClient (new CustomWebViewClient());
-			currentWeek = TAM_API.Util.GetCurrentWeekNumber (); 
-			textBox.Text = "Woche: " + Convert.ToString (currentWeek);
-
 			btn_prev.Click += delegate(object sender, EventArgs e) {
 				currentWeek--;
 				LoadCache();
@@ -80,6 +62,15 @@ namespace TAMClient
 				LoadPage ();
 			};
 
+
+			string pwd = "y_98diH[am";
+			session = new TamLogin()
+			{
+				username = "jens.vogler",
+				password = pwd,
+				school = "kho",
+				_class = "32"
+			};
 			LoadCache ();
 			Login ();
 		}

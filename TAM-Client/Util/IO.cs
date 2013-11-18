@@ -7,7 +7,7 @@ namespace TAMClient.Util
 {
 	public static class IO
 	{
-		public static bool SaveData<T>(Context context, string fileName, T data)
+		public static bool CacheData<T>(Context context, string fileName, T data)
 		{
 			try
 			{
@@ -26,7 +26,7 @@ namespace TAMClient.Util
 			}
 		}
 
-		public static T LoadData<T>(Context context, string fileName)
+		public static T LoadCachedData<T>(Context context, string fileName)
 		{
 			Java.IO.File file = context.GetFileStreamPath(fileName);
 
@@ -57,6 +57,34 @@ namespace TAMClient.Util
 			{
 				throw new Java.IO.FileNotFoundException("Could not find file " + fileName);
 			}
+		}
+
+		public static void SaveData(string file, string data)
+		{
+			string dir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			string path = dir + file;
+			File.WriteAllText (path, data);
+		}
+
+		public static void SaveDataArray(string file, string[] data)
+		{
+			string dir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			string path = dir + file;
+			File.WriteAllLines (path, data);
+		}
+
+		public static string LoadData(string file)
+		{
+			string dir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			string path = dir + file;
+			return File.ReadAllText(path);
+		}
+
+		public static string[] LoadDataArray(string file)
+		{
+			string dir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			string path = dir + file;
+			return File.ReadAllLines(path);
 		}
 	}
 }

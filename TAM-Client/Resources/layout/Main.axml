@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:id="@+id/linearLayout1">
-    <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tableLayout1"
-        android:stretchColumns="1">
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-            <Button
-                android:text="Button"
-                android:layout_column="0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button1" />
-            <TextView
-                android:text="Medium Text"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_column="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView1" />
-            <ProgressBar
-                android:layout_column="2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/progressBar1" />
-        </TableRow>
-    </TableLayout>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="fill_parent"
+    p1:layout_height="fill_parent"
+    p1:id="@+id/relativeLayout1">
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        p1:layout_width="wrap_content"
+        p1:id="@+id/progressBar1"
+        p1:layout_alignParentRight="true"
+        p1:layout_alignParentLeft="true"
+        p1:layout_alignParentTop="true"
+        p1:layout_height="10dp" />
     <WebView
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/webView1"
-        android:layout_marginBottom="0.0dp" />
-</LinearLayout>
+        p1:id="@+id/webView1"
+        p1:layout_below="@id/progressBar1"
+        p1:layout_width="match_parent"
+        p1:layout_height="match_parent"
+        p1:layout_marginBottom="50dp" />
+    <Button
+        p1:text="&lt;&lt;"
+        p1:layout_width="43dp"
+        p1:id="@+id/button_prev"
+        p1:layout_alignParentBottom="true"
+        p1:layout_height="50dp" />
+    <Button
+        p1:text="&gt;&gt;"
+        p1:layout_width="43dp"
+        p1:id="@+id/button_next"
+        p1:layout_below="@id/webView1"
+        p1:layout_alignRight="@id/webView1"
+        p1:layout_height="22.0dp"
+        p1:layout_alignBottom="@id/button_prev"
+        p1:layout_alignTop="@id/button_prev" />
+    <TextView
+        p1:text="WeekNr"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView1"
+        p1:layout_alignTop="@id/button_prev"
+        p1:layout_alignBottom="@id/button_prev"
+        p1:layout_width="wrap_content"
+        p1:layout_alignRight="@id/button_next"
+        p1:layout_toRightOf="@id/button_prev"
+        p1:layout_marginRight="44dp"
+        p1:layout_marginTop="12dp" />
+</RelativeLayout>
