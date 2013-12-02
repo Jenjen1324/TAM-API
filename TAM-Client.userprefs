@@ -1,33 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TAM-Client\TAM_API\TamLogin.cs">
-    <Files>
-      <File FileName="TAM-Client\MainActivity.cs" Line="41" Column="27" />
-      <File FileName="c:\Users\Jens\Documents\Visual Studio 2012\Projects\TAM-API\TAM-Client\TimeTableHandler.cs" Line="21" Column="5" />
-      <File FileName="TAM-Client\TAM_API\TamLogin.cs" Line="39" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="TAM-Client" expanded="True">
-            <Node name="Properties" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="menu" expanded="True" />
-            </Node>
-            <Node name="TAM_API" expanded="True">
-              <Node name="TamLogin.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

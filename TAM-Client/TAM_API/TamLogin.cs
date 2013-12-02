@@ -31,10 +31,10 @@ namespace TAMClient.TAM_API
 
         public void Login()
         {
-			/*if (username == null || password == null || school == null) {
+			if (username == null || password == null || school == null) {
 				if (!LoadCred ())
 					throw new Exception("No Login data provided");
-			}*/
+			}
 
             Console.WriteLine("Logging in...");
             this.cookies = new CookieContainer();
@@ -55,7 +55,7 @@ namespace TAMClient.TAM_API
             HttpWebResponse form = (HttpWebResponse)request.GetResponse();
         }
 
-        public void Test()
+        /*public void Test()
         {
             Console.WriteLine("Testing");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/ajax/register");
@@ -81,7 +81,7 @@ namespace TAMClient.TAM_API
             }
 
             Console.WriteLine(formPage);
-        }
+        }*/
 
 		private bool LoadCred()
 		{
@@ -101,10 +101,10 @@ namespace TAMClient.TAM_API
 
         public TimeTable GetTimeTable(int weekNumber)
         {
-			/*if (_class == null) {
+			if (_class == null) {
 				if (!LoadClass())
 					throw new Exception ("No class provided");
-			}*/
+			}
 
             Console.WriteLine("Requesting Timetable...");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://info.tam.ch/main.php?action=tt_oneclassNew&table=&list=0");

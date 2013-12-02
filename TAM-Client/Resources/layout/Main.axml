@@ -1,49 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:minWidth="25px"
-    p1:minHeight="25px"
-    p1:layout_width="fill_parent"
-    p1:layout_height="fill_parent"
-    p1:id="@+id/relativeLayout1">
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        p1:layout_width="wrap_content"
-        p1:id="@+id/progressBar1"
-        p1:layout_alignParentRight="true"
-        p1:layout_alignParentLeft="true"
-        p1:layout_alignParentTop="true"
-        p1:layout_height="10dp" />
-    <WebView
-        p1:id="@+id/webView1"
-        p1:layout_below="@id/progressBar1"
-        p1:layout_width="match_parent"
-        p1:layout_height="match_parent"
-        p1:layout_marginBottom="50dp" />
-    <Button
-        p1:text="&lt;&lt;"
-        p1:layout_width="43dp"
-        p1:id="@+id/button_prev"
-        p1:layout_alignParentBottom="true"
-        p1:layout_height="50dp" />
-    <Button
-        p1:text="&gt;&gt;"
-        p1:layout_width="43dp"
-        p1:id="@+id/button_next"
-        p1:layout_below="@id/webView1"
-        p1:layout_alignRight="@id/webView1"
-        p1:layout_height="22.0dp"
-        p1:layout_alignBottom="@id/button_prev"
-        p1:layout_alignTop="@id/button_prev" />
-    <TextView
-        p1:text="WeekNr"
-        p1:textAppearance="?android:attr/textAppearanceLarge"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/textView1"
-        p1:layout_alignTop="@id/button_prev"
-        p1:layout_alignBottom="@id/button_prev"
-        p1:layout_width="wrap_content"
-        p1:layout_alignRight="@id/button_next"
-        p1:layout_toRightOf="@id/button_prev"
-        p1:layout_marginRight="44dp"
-        p1:layout_marginTop="12dp" />
-</RelativeLayout>
+<tamclient.FlyOutContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/FlyOutContainer">
+    <include
+        layout="@layout/MenuLayout" />
+    <include
+        layout="@layout/TimeTable" />
+</tamclient.FlyOutContainer>
