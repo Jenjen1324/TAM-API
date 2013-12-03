@@ -1,9 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="TAM-Client\FlyOutContainer.cs" Line="1" Column="1" />
+      <File FileName="TAM-Client\MainActivity.cs" Line="50" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.TAM-Client AndroidDeviceId-Debug="4df0f1ab71ca6f75" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="4df0f1ab71ca6f75" />
+  <MonoDevelop.Ide.ItemProperties.TAM-Client AndroidDeviceId-Debug="4df1073000305f53" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="4df0f1ab71ca6f75" />
 </Properties>
