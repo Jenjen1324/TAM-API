@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/FlyOutContent"
+    android:background="#ffffffff">
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/view1"
+        android:background="#e6e6e6" />
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout1"
+        android:background="#e6e6e6">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1">
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/MenuButton"
+                android:layout_margin="4dp"
+                android:background="@drawable/action_menu" />
+            <TextView
+                android:text="TAM-Client"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/relativeLayout1">
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:id="@+id/progressBar1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_height="10dp" />
+        <WebView
+            android:id="@+id/webView1"
+            android:layout_below="@id/progressBar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp" />
+        <Button
+            android:text="&lt;&lt;"
+            android:layout_width="43dp"
+            android:id="@+id/button_prev"
+            android:layout_alignParentBottom="true"
+            android:layout_height="50dp" />
+        <Button
+            android:text="&gt;&gt;"
+            android:layout_width="43dp"
+            android:id="@+id/button_next"
+            android:layout_below="@id/webView1"
+            android:layout_alignRight="@id/webView1"
+            android:layout_height="22.0dp"
+            android:layout_alignBottom="@id/button_prev"
+            android:layout_alignTop="@id/button_prev" />
+        <TextView
+            android:text="WeekNr"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_week"
+            android:layout_alignTop="@id/button_prev"
+            android:layout_alignBottom="@id/button_prev"
+            android:layout_width="wrap_content"
+            android:layout_alignRight="@id/button_next"
+            android:layout_toRightOf="@id/button_prev"
+            android:layout_marginRight="44dp"
+            android:layout_marginTop="12dp" />
+    </RelativeLayout>
+</LinearLayout>
